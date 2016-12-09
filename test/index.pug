@@ -1,0 +1,82 @@
+doctype html
+html(lang="en")
+  meta(charset="utf-8")
+  meta(name="viewport" content="width=device-width,initial-scale=1")
+  title Micro CSS: UI tests
+  link(rel="stylesheet" href="../build/micro.css")
+  :stylus
+    .Test
+      min-height 100vh
+      background white
+      counter-reset test-describe
+
+    .Test-describe
+      counter-reset test-it
+      &:before
+        content counter(test-describe)
+        counter-increment test-describe
+
+    .Test-it:before
+      content counter(test-describe) "." counter(test-it)
+      counter-increment test-it
+
+    .Test-title
+      font-size 2em
+      font-family sans-serif
+      padding 20px
+      margin 0
+      background #eee
+      color #999
+
+    .Test-describe
+    .Test-it
+      background #eee
+      border-left 5px solid #666
+      color #666
+      font-family sans-serif
+      font-weight bold
+      margin 20px 0
+      padding 0.75em 20px
+
+    .Test-describe
+      font-size 1.5em
+      margin 60px 0 20px
+
+    .Test-describe:before
+    .Test-it:before
+      color #999
+      display inline-block
+      margin-right 10px
+      min-width 30px
+      text-transform: uppercase
+
+    //- Custom helpers
+
+    //- Test whether the body's margin has been removed
+    body
+      background red
+
+    //- Highlight the bounds of direct children of a test block
+    .Test-run--highlightEl > *
+      outline 1px solid #ADD8E6
+
+  div.Test
+    h1.Test-title
+      a(href="") Micro CSS: UI tests
+    h2.Test-describe
+      code html
+    h3.Test-it should have monospace font family (opinionated)
+    div.Test-run abcdefghijklmnopqrstuvwxyz
+    h3.Test-it should have a line height of 1.5
+    div.Test-run abcdefghijklmnopqrstuvwxyz
+
+    h2.Test-describe
+      code body
+    h3.Test-it should have no margin (opinionated)
+    div.Test-run (there should be no red background visible on this page)
+
+    h2.Test-describe #[code main, ] #[code code]
+    h3.Test-it should render as block
+    div.Test-run.Test-run--highlightEl
+      main main
+      nav nav

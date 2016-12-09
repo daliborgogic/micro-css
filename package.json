@@ -1,0 +1,22 @@
+{
+  "name": "micro",
+  "version": "1.0.0-alpha",
+  "description": "Micro CSS Starter point",
+  "scripts": {
+    "dev": "stylus -w -u autoprefixer-stylus --with \"{ browsers: ['last 2 versions'] }\" --sourcemap-inline styl/micro.styl -o build/micro.css",
+    "prebuild": "stylus -u autoprefixer-stylus --with \"{ browsers: ['last 2 versions'] }\" styl/micro.styl -o dist/micro.css",
+    "build": "stylus -u autoprefixer-stylus --with \"{ browsers: ['last 2 versions'] }\" styl/micro.styl -c -o dist/micro.min.css",
+    "pug": "pug -O test/filters.js --watch test",
+    "test": "npm-run-all --parallel dev pug"
+  },
+  "author": "Dalibor Gogic <mail@daliborgogic.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer-stylus": "^0.11.0",
+    "npm-run-all": "^3.1.2",
+    "pug": "^2.0.0-beta6",
+    "pug-cli": "^1.0.0-alpha6",
+    "stylus": "^0.54.5"
+  }
+}
+
