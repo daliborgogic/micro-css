@@ -1,6 +1,6 @@
 # Micro CSS
 
-> forget normalize, you only nead 10 HTML tags and lay your own CSS fondation
+> Forget normalize, bootstrap. You only nead 10 HTML tags. Lay your own CSS fondation
 
 Dev
 
