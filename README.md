@@ -11,7 +11,7 @@ $ npm i && npm run dev
 Test
 
 ```
-$ npm run test
+$ npm test
 ```
 
 Build
