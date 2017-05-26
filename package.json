@@ -3,7 +3,7 @@
   "version": "1.0.0-alpha",
   "description": "Micro CSS Starter point",
   "scripts": {
-    "dev": "stylus -w -u autoprefixer-stylus --with \"{ browsers: ['last 2 versions'] }\" --sourcemap-inline styl/micro.styl -o build/micro.css",
+    "dev": "stylus -w -u autoprefixer-stylus --with \"{ browsers: ['last 2 versions'] }\" --sourcemap-inline styl/micro.styl -o dist/micro.css",
     "prebuild": "stylus -u autoprefixer-stylus --with \"{ browsers: ['last 2 versions'] }\" styl/micro.styl -o dist/micro.css",
     "build": "stylus -u autoprefixer-stylus --with \"{ browsers: ['last 2 versions'] }\" styl/micro.styl -c -o dist/micro.min.css",
     "pug": "pug -O test/filters.js --watch test",
@@ -19,4 +19,3 @@
     "stylus": "^0.54.5"
   }
 }
-
